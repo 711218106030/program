@@ -1,0 +1,41 @@
+#include <stdio.h>
+void bubble_sort(int a[],int n)
+{
+    int i,j;
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            int temp;
+            if(a[j]<a[i])
+            {
+                
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+}
+void print(int a[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        
+        printf("%d\t",a[i]);
+        
+    }
+    
+    
+    
+}
+int main()
+{
+    int a[5]={23,12,43,24,56};
+    int n= sizeof(a)/sizeof(a[0]);
+    printf("Before Swapping\t");
+    print(a,n); 
+    bubble_sort(a,n);
+    printf("\nAfter Swapping\t");
+    print(a,n);
+}    
